@@ -58,7 +58,7 @@ class CompanyLogoController extends Controller
             ]);
         }
 
-        return redirect()->route('company-logos.index')
+        return redirect()->route('settings.company-logos.index')
             ->with('success', 'Logos uploaded successfully.');
     }
 
@@ -70,7 +70,7 @@ class CompanyLogoController extends Controller
         Storage::disk('public')->delete($companyLogo->logo_path);
         $companyLogo->delete();
 
-        return redirect()->route('company-logos.index')
+        return redirect()->route('settings.company-logos.index')
             ->with('success', 'Logo deleted successfully.');
     }
 }

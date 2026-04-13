@@ -82,9 +82,9 @@ Route::get('/dashboard', function () {
 })->middleware(['auth'])->name('dashboard');
 
 Route::middleware('auth')->group(function () {
-    Route::get('/profile', [ProfileController::class, 'edit'])->name('user.profile.edit');
-    Route::patch('/profile', [ProfileController::class, 'update'])->name('user.profile.update');
-    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('user.profile.destroy');
+    Route::get('/profile', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::patch('/profile', [ProfileController::class, 'update'])->name('profile.update');
+    Route::delete('/profile', [ProfileController::class, 'destroy'])->name('profile.destroy');
 });
 
 // Project API Routes (JSON responses for AJAX)

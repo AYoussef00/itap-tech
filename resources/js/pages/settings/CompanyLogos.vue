@@ -65,7 +65,7 @@ const submit = () => {
         formData.append('logos[]', file);
     });
 
-    router.post(route('company-logos.store'), formData, {
+    router.post(route('settings.company-logos.store'), formData, {
         preserveScroll: true,
         forceFormData: true,
         onSuccess: () => {
@@ -85,7 +85,7 @@ const submit = () => {
 
 const deleteLogo = (logoId: number) => {
     if (confirm('Are you sure you want to delete this logo?')) {
-        router.delete(route('company-logos.destroy', logoId), {
+        router.delete(route('settings.company-logos.destroy', logoId), {
             preserveScroll: true,
         });
     }
