@@ -57,15 +57,8 @@ import {
     Package,
     Target,
     Wrench,
-    Headphones
+    Headphones,
 } from 'lucide-vue-next'
-
-// Animation state
-const floatingIcons = [
-    { icon: Sparkles, color: 'from-yellow-400 to-orange-500', delay: 0 },
-    { icon: Zap, color: 'from-blue-400 to-cyan-500', delay: 0.5 },
-    { icon: Shield, color: 'from-purple-400 to-pink-500', delay: 1 },
-]
 
 // Services data
 const services = [
@@ -202,151 +195,97 @@ const partners = computed(() => {
 <template>
     <Head title="iTab - Leading Software Development Company" />
 
-    <!-- Navigation Bar -->
-    <NavBar textColor="white" />
+    <!-- Navigation: logo left, links right (handled inside NavBar via dir="ltr") -->
+    <NavBar theme="light" />
 
-    <div class="min-h-screen bg-white">
-        <!-- Hero Section -->
-        <section id="hero" class="relative min-h-screen flex items-center justify-center bg-gradient-to-br from-blue-950 via-blue-900 to-purple-900 overflow-hidden pt-20">
-            <!-- Animated Background -->
-            <div class="absolute inset-0">
-                <!-- Grid Pattern -->
-                <div class="absolute inset-0 opacity-10">
-                    <div class="absolute inset-0" :style="{
-                        backgroundImage: `
-                            linear-gradient(to right, rgba(255,255,255,0.1) 1px, transparent 1px),
-                            linear-gradient(to bottom, rgba(255,255,255,0.1) 1px, transparent 1px)
-                        `,
-                        backgroundSize: '60px 60px'
-                    }"></div>
-                </div>
+    <div class="min-h-screen bg-[#ffffff]">
+        <!-- Hero: خلفية بيضاء نقية (#fff) للقسم بالكامل -->
+        <section id="hero" class="relative w-full overflow-hidden bg-[#ffffff] pt-24 pb-16 md:pt-28 md:pb-24">
+            <div class="container relative z-10 mx-auto px-4">
+                <div class="mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20">
+                    <div class="text-center lg:text-start">
+                        <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-gray-200/90 bg-[#ffffff] px-4 py-1.5 text-xs font-medium tracking-wide text-gray-600">
+                            <Sparkles class="h-3.5 w-3.5 text-amber-500" />
+                            <span>الحل الأمثل لمشروعك الرقمي</span>
+                        </div>
 
-                <!-- Gradient Orbs -->
-                <div class="absolute top-20 -left-20 w-96 h-96 rounded-full bg-blue-500/30 blur-3xl animate-orb-1"></div>
-                <div class="absolute top-40 -right-20 w-96 h-96 rounded-full bg-purple-500/30 blur-3xl animate-orb-2"></div>
-                <div class="absolute bottom-20 left-1/2 w-96 h-96 rounded-full bg-cyan-500/20 blur-3xl animate-orb-3"></div>
-            </div>
+                        <h1 class="mb-6 text-balance text-4xl font-semibold leading-[1.08] tracking-tight text-gray-900 md:text-5xl lg:text-[3.25rem]">
+                            تحويل الأفكار
+                            <span class="mt-1 block text-gray-500">إلى التميز الرقمي</span>
+                        </h1>
 
-            <div class="container mx-auto px-4 py-20 relative z-10">
-                <div class="max-w-5xl mx-auto">
-                    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
-                        <!-- Left Content -->
-                        <div class="text-white text-center lg:text-right">
-                            <div class="animate-fade-in-up">
-                                <!-- Badge -->
-                                <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 backdrop-blur-sm border border-white/20 mb-6 hover:scale-105 transition-transform cursor-pointer">
-                                    <Sparkles class="w-4 h-4 text-yellow-400" />
-                                    <span class="text-sm">الحل الأمثل لمشروعك الرقمي</span>
-                                </div>
+                        <p class="mx-auto mb-10 max-w-xl text-lg font-normal leading-relaxed text-gray-500 lg:mx-0">
+                            نصمم ونطور حلول ويب وموبايل مبتكرة تمكن الشركات من النمو والتفاعل والريادة من خلال التكنولوجيا.
+                        </p>
 
-                                <h1 class="mb-6 text-4xl md:text-5xl lg:text-6xl leading-tight">
-                                    <span class="block mb-2">تحويل الأفكار</span>
-                                    <span class="block bg-gradient-to-r from-blue-400 via-purple-400 to-pink-400 bg-clip-text text-transparent">
-                                        إلى التميز الرقمي
-                                    </span>
-                                </h1>
+                        <div class="flex flex-wrap items-center justify-center gap-3 lg:justify-start">
+                            <Button size="lg" class="h-12 rounded-full bg-gray-900 px-8 text-[15px] font-medium text-white shadow-sm hover:bg-gray-800">
+                                ابدأ مشروعك الآن
+                                <ArrowRight class="ms-2 h-4 w-4" />
+                            </Button>
+                            <Link
+                                href="/contact-us"
+                                class="inline-flex h-12 items-center rounded-full border border-gray-300 bg-white px-6 text-[15px] font-medium text-gray-800 transition-colors hover:bg-gray-50"
+                            >
+                                تواصل معنا
+                            </Link>
+                        </div>
+
+                        <div class="mx-auto mt-14 grid max-w-md grid-cols-3 gap-6 border-t border-gray-100 pt-10 lg:mx-0">
+                            <div v-for="stat in [{ number: '500+', label: 'عميل' }, { number: '1000+', label: 'مشروع' }, { number: '98%', label: 'رضا العملاء' }]" :key="stat.label" class="text-center lg:text-start">
+                                <div class="text-2xl font-semibold tracking-tight text-gray-900 md:text-3xl">{{ stat.number }}</div>
+                                <div class="mt-0.5 text-xs font-medium text-gray-500">{{ stat.label }}</div>
                             </div>
-
-                            <p class="mb-10 max-w-2xl mx-auto lg:mx-0 opacity-90 text-lg animate-fade-in-up-delay-1">
-                                نصمم ونطور حلول ويب وموبايل مبتكرة تمكن الشركات من النمو والتفاعل والريادة من خلال التكنولوجيا.
-                            </p>
-
-                            <div class="flex gap-4 justify-center lg:justify-start flex-wrap animate-fade-in-up-delay-2">
-                                <Button size="lg" class="bg-white text-blue-950 hover:bg-gray-100 shadow-2xl group">
-                                    ابدأ مشروعك الآن
-                                    <ArrowRight class="mr-2 h-5 w-5 group-hover:translate-x-1 transition-transform" />
-                                </Button>
-                            </div>
-
-                            <!-- Stats -->
-                            <div class="grid grid-cols-3 gap-6 mt-12 pt-12 border-t border-white/20 animate-fade-in-up-delay-3">
-                                <div 
-                                    v-for="stat in [
-                                        { number: '500+', label: 'عميل' },
-                                        { number: '1000+', label: 'مشروع' },
-                                        { number: '98%', label: 'رضا العملاء' },
-                                    ]"
-                                    :key="stat.label"
-                                    class="text-center hover:scale-110 transition-transform cursor-pointer"
-                                >
-                                    <div class="text-3xl font-bold mb-1">{{ stat.number }}</div>
-                                    <div class="text-sm opacity-70">{{ stat.label }}</div>
-                                </div>
                         </div>
                     </div>
 
-                        <!-- Right - 3D Card Animation -->
-                        <div class="relative hidden lg:block animate-scale-in">
-                            <!-- Main Card -->
-                            <div class="relative">
-                                <div class="relative w-full h-96 bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-xl rounded-3xl border border-white/20 shadow-2xl p-8 overflow-hidden animate-card-float">
-                                    <!-- Floating Icons Inside Card -->
-                                    <div
-                                        v-for="(item, index) in floatingIcons"
-                                        :key="index"
-                                        :class="`absolute w-16 h-16 rounded-2xl bg-gradient-to-br ${item.color} flex items-center justify-center shadow-lg`"
-                                        :style="{
-                                            left: `${20 + index * 25}%`,
-                                            top: `${20 + index * 20}%`,
-                                            animation: `float-icon ${8 + index}s ease-in-out infinite`,
-                                            animationDelay: `${item.delay}s`
-                                        }"
-                                    >
-                                        <component :is="item.icon" class="w-8 h-8 text-white" />
-                                    </div>
-
-                                    <!-- Code Lines Animation -->
-                                    <div class="space-y-3 mt-20">
-                                        <div 
-                                            v-for="(width, index) in [60, 80, 70, 90, 65]"
-                                            :key="index"
-                                            class="h-3 bg-gradient-to-r from-blue-400/30 to-purple-400/30 rounded-full code-line"
-                                            :style="{
-                                                '--target-width': `${width}%`,
-                                                '--delay': `${0.5 + index * 0.1}s`,
-                                                '--pulse-delay': `${2 + index * 0.1}s`
-                                            }"
-                                        ></div>
-                                    </div>
-                                </div>
-                            </div>
+                    <div class="relative mx-auto w-full max-w-xl lg:max-w-none">
+                        <div
+                            class="overflow-hidden rounded-[2rem] border border-gray-100 bg-[#ffffff] shadow-[0_16px_48px_rgba(0,0,0,0.04)]"
+                        >
+                            <img
+                                src="/asset/conceptual-technology-illustration-artificial-intelligence-isolated-white-background_660230-73128.avif"
+                                alt="رسم توضيحي لتقنيات الذكاء الاصطناعي والحلول الرقمية"
+                                class="h-auto w-full object-contain"
+                                loading="eager"
+                                decoding="async"
+                                @error="(e) => { (e.target as HTMLImageElement).src = '/asset/bk.jpg' }"
+                            />
                         </div>
                     </div>
                 </div>
             </div>
 
-            <!-- Scroll Indicator -->
-            <div class="absolute bottom-8 left-1/2 -translate-x-1/2 animate-scroll-indicator">
-                <div class="w-6 h-10 border-2 border-white/30 rounded-full flex justify-center pt-2">
-                    <div class="w-1.5 h-3 bg-white rounded-full animate-scroll-dot"></div>
+            <div class="pointer-events-none absolute bottom-6 left-1/2 hidden -translate-x-1/2 md:block">
+                <div class="flex h-9 w-6 items-start justify-center rounded-full border border-gray-200 pt-2">
+                    <div class="h-1.5 w-0.5 rounded-full bg-gray-300"></div>
                 </div>
             </div>
         </section>
 
         <!-- Our Services -->
-        <section id="services" class="py-20 bg-gray-50">
+        <section id="services" class="border-t border-gray-200/80 bg-white py-20">
             <div class="container mx-auto px-4">
-                <div class="text-center mb-16 animate-fade-in-up">
-                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">خدماتنا</h2>
-                    <p class="opacity-70 text-lg md:text-xl">
-                        كل ذلك في مكان واحد<br />
-                        مدعوم بالتكنولوجيا
+                <div class="mb-16 text-center animate-fade-in-up">
+                    <h2 class="mb-3 text-3xl font-semibold tracking-tight text-gray-900 md:text-4xl">خدماتنا</h2>
+                    <p class="mx-auto max-w-2xl text-base text-gray-500 md:text-lg">
+                        كل ذلك في مكان واحد، مدعوم بتجربة استخدام واضحة وهادئة.
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
                     <div
                         v-for="(service, index) in services"
                         :key="service.title"
                         class="service-card"
                         :style="{ animationDelay: `${index * 0.1}s` }"
                     >
-                        <Card class="p-6 h-full hover:shadow-lg transition-shadow duration-300 border-2 hover:border-blue-500">
-                            <div class="w-14 h-14 rounded-lg flex items-center justify-center mb-4" style="background-color: #4b3da6;">
-                                <component :is="service.icon" class="w-7 h-7 text-white" />
-                        </div>
-                            <h3 class="text-xl font-bold text-gray-900 mb-3">{{ service.title }}</h3>
-                            <p class="opacity-70 text-gray-600">{{ service.description }}</p>
+                        <Card class="h-full rounded-3xl border border-gray-100 bg-[#fbfbfd] p-6 shadow-sm transition-shadow duration-300 hover:shadow-md">
+                            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-900 text-white">
+                                <component :is="service.icon" class="h-6 w-6" />
+                            </div>
+                            <h3 class="mb-2 text-lg font-semibold tracking-tight text-gray-900">{{ service.title }}</h3>
+                            <p class="text-sm leading-relaxed text-gray-500">{{ service.description }}</p>
                         </Card>
                     </div>
                 </div>
@@ -469,9 +408,8 @@ const partners = computed(() => {
                             />
                     </div>
                     
-                        <!-- Decorative Elements -->
-                        <div class="absolute -z-10 -top-6 -right-6 w-40 h-40 rounded-full bg-gradient-to-br from-blue-400 to-purple-400 opacity-20 blur-3xl"></div>
-                        <div class="absolute -z-10 -bottom-6 -left-6 w-40 h-40 rounded-full bg-gradient-to-br from-purple-400 to-blue-400 opacity-20 blur-3xl"></div>
+                        <div class="absolute -z-10 -top-6 -right-6 h-40 w-40 rounded-full bg-gray-200/40 blur-3xl"></div>
+                        <div class="absolute -z-10 -bottom-6 -left-6 h-40 w-40 rounded-full bg-gray-200/40 blur-3xl"></div>
                         </div>
                     </div>
             </div>
@@ -491,8 +429,7 @@ const partners = computed(() => {
                             />
                         </div>
 
-                        <!-- Decorative Elements -->
-                        <div class="absolute -z-10 -top-6 -left-6 w-40 h-40 rounded-full bg-gradient-to-br from-gray-400 to-gray-600 opacity-20 blur-3xl"></div>
+                        <div class="absolute -z-10 -top-6 -left-6 h-40 w-40 rounded-full bg-gray-200/50 blur-3xl"></div>
                     </div>
                     
                     <div class="order-1 lg:order-2 website-section-right animate-slide-in-right">
@@ -536,36 +473,28 @@ const partners = computed(() => {
         </section>
 
         <!-- Goals Section -->
-        <section class="py-20 bg-gradient-to-br from-blue-950 via-blue-900 to-purple-900 text-white relative overflow-hidden">
-            <!-- Background Pattern -->
-            <div class="absolute inset-0 opacity-5">
-                <div class="absolute inset-0" :style="{
-                    backgroundImage: 'radial-gradient(circle at 1px 1px, white 1px, transparent 0)',
-                    backgroundSize: '40px 40px'
-                }"></div>
-            </div>
-
-            <div class="container mx-auto px-4 relative z-10">
-                <div class="text-center mb-16 animate-fade-in-up">
-                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4">هدفنا لعام 2026</h2>
-                    <p class="opacity-90 max-w-2xl mx-auto text-lg">
-                        نسعى لتحقيق التميز والريادة في مجال التكنولوجيا وتقديم أفضل الحلول البرمجية لعملائنا
+        <section class="relative overflow-hidden border-t border-gray-200/80 bg-[#f5f5f7] py-20 text-gray-900">
+            <div class="container relative z-10 mx-auto px-4">
+                <div class="mb-16 animate-fade-in-up text-center">
+                    <h2 class="mb-3 text-3xl font-semibold tracking-tight md:text-4xl">هدفنا لعام 2026</h2>
+                    <p class="mx-auto max-w-2xl text-base text-gray-500 md:text-lg">
+                        نسعى لتحقيق التميز والريادة في مجال التكنولوجيا وتقديم أفضل الحلول البرمجية لعملائنا.
                     </p>
-                            </div>
+                </div>
 
-                <div class="grid grid-cols-2 lg:grid-cols-4 gap-8 max-w-5xl mx-auto">
+                <div class="mx-auto grid max-w-5xl grid-cols-2 gap-6 lg:grid-cols-4">
                     <div
                         v-for="(goal, index) in goals"
                         :key="goal.label"
-                        class="text-center goal-item"
+                        class="goal-item rounded-3xl border border-gray-200/90 bg-white p-6 text-center shadow-sm"
                         :style="{ animationDelay: `${index * 0.1}s` }"
                     >
-                        <div class="w-20 h-20 rounded-full bg-white/10 backdrop-blur-sm flex items-center justify-center mx-auto mb-4 border border-white/20">
-                            <component :is="goal.icon" class="w-10 h-10 text-white" />
+                        <div class="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-2xl bg-gray-100">
+                            <component :is="goal.icon" class="h-7 w-7 text-gray-900" />
                         </div>
-                        <div class="text-4xl font-bold mb-2">{{ goal.number }}</div>
-                        <div class="opacity-80">{{ goal.label }}</div>
-                </div>
+                        <div class="mb-1 text-3xl font-semibold tracking-tight">{{ goal.number }}</div>
+                        <div class="text-sm text-gray-500">{{ goal.label }}</div>
+                    </div>
                 </div>
             </div>
         </section>
@@ -605,7 +534,7 @@ const partners = computed(() => {
         <section class="py-20 px-4 bg-white hidden">
             <div class="max-w-7xl mx-auto">
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-                    <Link href="/services/mobile-development" class="bg-gradient-to-br from-blue-50 to-purple-50 backdrop-blur-lg rounded-3xl p-8 border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                    <Link href="/services/mobile-development" class="rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md group cursor-pointer">
                         <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gray-200 transition-colors">
                             <Smartphone class="w-8 h-8 text-gray-700" />
                         </div>
@@ -629,7 +558,7 @@ const partners = computed(() => {
                         </ul>
                     </Link>
 
-                    <Link href="/services/web-development" class="bg-gradient-to-br from-blue-50 to-purple-50 backdrop-blur-lg rounded-3xl p-8 border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                    <Link href="/services/web-development" class="rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md group cursor-pointer">
                         <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gray-200 transition-colors">
                             <Globe class="w-8 h-8 text-gray-700" />
                         </div>
@@ -653,7 +582,7 @@ const partners = computed(() => {
                         </ul>
                     </Link>
 
-                    <Link href="/services/chatbot-automation" class="bg-gradient-to-br from-blue-50 to-purple-50 backdrop-blur-lg rounded-3xl p-8 border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                    <Link href="/services/chatbot-automation" class="rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md group cursor-pointer">
                         <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gray-200 transition-colors">
                             <Zap class="w-8 h-8 text-gray-700" />
                         </div>
@@ -677,7 +606,7 @@ const partners = computed(() => {
                         </ul>
                     </Link>
 
-                    <Link href="/services/cloud-devops" class="bg-gradient-to-br from-blue-50 to-purple-50 backdrop-blur-lg rounded-3xl p-8 border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                    <Link href="/services/cloud-devops" class="rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md group cursor-pointer">
                         <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gray-200 transition-colors">
                             <svg class="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 15a4 4 0 004 4h9a5 5 0 10-.1-9.999 5.002 5.002 0 10-9.78 2.096A4.001 4.001 0 003 15z"/>
@@ -703,7 +632,7 @@ const partners = computed(() => {
                         </ul>
                     </Link>
 
-                    <Link href="/services/consulting" class="bg-gradient-to-br from-blue-50 to-purple-50 backdrop-blur-lg rounded-3xl p-8 border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                    <Link href="/services/consulting" class="rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md group cursor-pointer">
                         <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gray-200 transition-colors">
                             <svg class="w-8 h-8 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
@@ -729,7 +658,7 @@ const partners = computed(() => {
                         </ul>
                     </Link>
 
-                    <Link href="/services/chatbot-automation" class="bg-gradient-to-br from-blue-50 to-purple-50 backdrop-blur-lg rounded-3xl p-8 border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 group cursor-pointer">
+                    <Link href="/services/chatbot-automation" class="rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md group cursor-pointer">
                         <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gray-200 transition-colors">
                             <MessageCircle class="w-8 h-8 text-gray-700" />
                         </div>
@@ -768,7 +697,7 @@ const partners = computed(() => {
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
                     <!-- Feature 1 -->
-                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 backdrop-blur-lg rounded-3xl p-8 border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 group text-center">
+                    <div class="rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md group text-center">
                         <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-gray-200 transition-colors">
                             <Award class="w-8 h-8 text-gray-700" />
                                         </div>
@@ -779,7 +708,7 @@ const partners = computed(() => {
                                     </div>
 
                     <!-- Feature 2 -->
-                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 backdrop-blur-lg rounded-3xl p-8 border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 group text-center">
+                    <div class="rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md group text-center">
                         <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-gray-200 transition-colors">
                             <Clock class="w-8 h-8 text-gray-700" />
                                     </div>
@@ -790,7 +719,7 @@ const partners = computed(() => {
                                 </div>
 
                     <!-- Feature 3 -->
-                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 backdrop-blur-lg rounded-3xl p-8 border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 group text-center">
+                    <div class="rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md group text-center">
                         <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-gray-200 transition-colors">
                             <Shield class="w-8 h-8 text-gray-700" />
                         </div>
@@ -801,7 +730,7 @@ const partners = computed(() => {
                                     </div>
 
                     <!-- Feature 4 -->
-                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 backdrop-blur-lg rounded-3xl p-8 border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 group text-center">
+                    <div class="rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md group text-center">
                         <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mx-auto mb-6 group-hover:bg-gray-200 transition-colors">
                             <Users class="w-8 h-8 text-gray-700" />
                                         </div>
@@ -970,7 +899,7 @@ const partners = computed(() => {
 
                 <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
                     <!-- E-commerce -->
-                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 backdrop-blur-lg rounded-3xl p-8 border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 group">
+                    <div class="rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md group">
                         <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gray-200 transition-colors">
                             <ShoppingCart class="w-8 h-8 text-gray-700" />
                         </div>
@@ -981,7 +910,7 @@ const partners = computed(() => {
                     </div>
 
                     <!-- Logistics -->
-                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 backdrop-blur-lg rounded-3xl p-8 border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 group">
+                    <div class="rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md group">
                         <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gray-200 transition-colors">
                             <Truck class="w-8 h-8 text-gray-700" />
                     </div>
@@ -992,7 +921,7 @@ const partners = computed(() => {
                         </div>
 
                     <!-- Healthcare -->
-                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 backdrop-blur-lg rounded-3xl p-8 border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 group">
+                    <div class="rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md group">
                         <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gray-200 transition-colors">
                             <Heart class="w-8 h-8 text-gray-700" />
                         </div>
@@ -1003,7 +932,7 @@ const partners = computed(() => {
                     </div>
 
                     <!-- Fintech -->
-                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 backdrop-blur-lg rounded-3xl p-8 border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 group">
+                    <div class="rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md group">
                         <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gray-200 transition-colors">
                             <CreditCard class="w-8 h-8 text-gray-700" />
                         </div>
@@ -1014,7 +943,7 @@ const partners = computed(() => {
                     </div>
 
                     <!-- Education -->
-                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 backdrop-blur-lg rounded-3xl p-8 border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 group">
+                    <div class="rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md group">
                         <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gray-200 transition-colors">
                             <GraduationCap class="w-8 h-8 text-gray-700" />
                         </div>
@@ -1025,7 +954,7 @@ const partners = computed(() => {
                     </div>
 
                     <!-- Real Estate -->
-                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 backdrop-blur-lg rounded-3xl p-8 border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 group">
+                    <div class="rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md group">
                         <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gray-200 transition-colors">
                             <Building class="w-8 h-8 text-gray-700" />
                         </div>
@@ -1036,7 +965,7 @@ const partners = computed(() => {
                     </div>
 
                     <!-- Cloud Kitchen -->
-                    <div class="bg-gradient-to-br from-blue-50 to-purple-50 backdrop-blur-lg rounded-3xl p-8 border border-gray-200 hover:border-gray-300 hover:shadow-lg transition-all duration-300 group md:col-span-2 lg:col-span-1">
+                    <div class="rounded-3xl border border-gray-100 bg-white p-8 shadow-sm transition-all duration-300 hover:shadow-md group md:col-span-2 lg:col-span-1">
                         <div class="w-16 h-16 bg-gray-100 rounded-2xl flex items-center justify-center mb-6 group-hover:bg-gray-200 transition-colors">
                             <UtensilsCrossed class="w-8 h-8 text-gray-700" />
                         </div>
@@ -1248,23 +1177,25 @@ const partners = computed(() => {
         </section>
 
         <!-- Footer -->
-        <footer class="bg-gray-900 text-white">
-            <div class="max-w-7xl mx-auto px-4 py-12">
-                <div class="flex flex-col items-center justify-center space-y-6">
+        <footer class="border-t border-gray-200 bg-white text-gray-900">
+            <div class="mx-auto max-w-7xl px-4 py-14">
+                <div class="flex flex-col items-center justify-center space-y-8">
                     <!-- Company Logo -->
                     <div class="text-center">
                         <Link href="/" class="flex items-center justify-center">
-                            <img src="/asset/logo-new-white.png"
-                                 alt="iTab Logo"
-                                 class="h-16 w-auto">
+                            <img
+                                src="/asset/Black_White_Minimal_Modern_Simple_Bold_Business_Mag_Logo__1_-removebg-preview.png"
+                                alt="iTab Logo"
+                                class="h-10 w-auto md:h-11"
+                            />
                         </Link>
                     </div>
 
                     <!-- Social Media Links -->
-                    <div class="flex items-center gap-4">
+                    <div class="flex items-center gap-5">
                         <!-- Facebook -->
                         <a href="https://www.facebook.com/profile.php?id=61585174361896" target="_blank" rel="noopener noreferrer"
-                           class="text-gray-400 hover:text-blue-500 transition-colors duration-200">
+                           class="text-gray-400 transition-colors duration-200 hover:text-gray-900">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                             </svg>
@@ -1272,7 +1203,7 @@ const partners = computed(() => {
 
                         <!-- Instagram -->
                         <a href="https://www.instagram.com/itap_solution/" target="_blank" rel="noopener noreferrer"
-                           class="text-gray-400 hover:text-pink-500 transition-colors duration-200">
+                           class="text-gray-400 transition-colors duration-200 hover:text-gray-900">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
                             </svg>
@@ -1280,7 +1211,7 @@ const partners = computed(() => {
 
                         <!-- TikTok -->
                         <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer"
-                           class="text-gray-400 hover:text-black transition-colors duration-200">
+                           class="text-gray-400 transition-colors duration-200 hover:text-gray-900">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
                             </svg>
@@ -1288,7 +1219,7 @@ const partners = computed(() => {
 
                         <!-- LinkedIn -->
                         <a href="https://www.linkedin.com/company/itap-solution" target="_blank" rel="noopener noreferrer"
-                           class="text-gray-400 hover:text-blue-600 transition-colors duration-200">
+                           class="text-gray-400 transition-colors duration-200 hover:text-gray-900">
                             <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
                                 <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
                             </svg>
@@ -1298,13 +1229,13 @@ const partners = computed(() => {
                     <!-- Legal -->
                     <div class="flex flex-wrap items-center justify-center gap-2 text-sm">
                         <Link href="/privacy-policy"
-                              class="text-gray-400 hover:text-white transition-colors duration-200">
+                              class="text-gray-500 transition-colors duration-200 hover:text-gray-900">
                             {{ t('footerPrivacyPolicy') }}
                         </Link>
                     </div>
 
                     <!-- Copyright -->
-                    <div class="text-gray-400 text-sm">
+                    <div class="text-sm text-gray-400">
                         {{ t('footerCopyright') }}
                     </div>
                 </div>

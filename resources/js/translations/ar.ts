@@ -407,5 +407,28 @@ export const ar = {
     'قد نحدّث سياسة الخصوصية من وقت لآخر. تُنشر النسخة المعدّلة على هذه الصفحة مع تحديث تاريخ "آخر تحديث". ننصحك بمراجعة السياسة دورياً.',
   privacyS12Title: "١٢. تواصل معنا",
   privacyS12Text:
-    "للأسئلة حول سياسة الخصوصية أو ممارسات البيانات، راسلنا على info@itap-tech.com أو عبر بيانات التواصل في صفحة اتصل بنا."
+    "للأسئلة حول سياسة الخصوصية أو ممارسات البيانات، راسلنا على info@itap-tech.com أو عبر بيانات التواصل في صفحة اتصل بنا.",
+
+  // User Data Deletion page
+  userDeletionMetaTitle: "حذف بيانات المستخدم - iTab",
+  userDeletionHeroTitle: "حذف بيانات المستخدم",
+  userDeletionUpdated: "آخر تحديث: 13 أبريل 2026",
+  userDeletionIntro:
+    "إذا كنت ترغب في حذف بياناتك الشخصية من أنظمة iTab، يمكنك إرسال طلب حذف في أي وقت. توضح هذه الصفحة طريقة إرسال الطلب وما يحدث بعد استلامه.",
+  userDeletionHowTitle: "كيفية طلب حذف البيانات",
+  userDeletionHow1: "أرسل بريدًا إلكترونيًا إلى info@itap-tech.com بعنوان: Data Deletion Request.",
+  userDeletionHow2: "أضف معلومات كافية لتحديد حسابك (مثل البريد الإلكتروني المسجل ورقم الهاتف).",
+  userDeletionHow3: "إذا تم تقديم الطلب عبر ممثل مفوض، يرجى إرفاق ما يثبت التفويض.",
+  userDeletionProcessTitle: "ماذا نفعل بعد استلام الطلب",
+  userDeletionProcess1: "نتحقق من الهوية لحماية الحساب ومنع أي طلب حذف غير مصرح به.",
+  userDeletionProcess2: "نعالج الطلبات الصحيحة خلال مدة معقولة، وغالبًا خلال 30 يومًا.",
+  userDeletionProcess3: "سنرسل لك رسالة تأكيد بعد إتمام عملية الحذف.",
+  userDeletionExceptionsTitle: "استثناءات محتملة",
+  userDeletionExceptionsText:
+    "في بعض الحالات، قد نحتفظ ببيانات محدودة إذا كان ذلك مطلوبًا قانونيًا أو لأسباب أمنية أو لمنع الاحتيال أو لحل النزاعات أو للالتزامات التعاقدية.",
+  userDeletionCallbackTitle: "Deletion Request Callback",
+  userDeletionCallbackText:
+    "بالنسبة للمنصات أو الشركاء الذين يحتاجون رابط callback لطلبات الحذف، يمكن بدء الطلب عبر هذه الصفحة أو عبر البريد الإلكتروني. وإذا احتجت تكامل callback مخصص للمراجعة، تواصل معنا وسنوفره.",
+  userDeletionContactTitle: "تحتاج مساعدة؟",
+  userDeletionContactText: "لأي استفسار، تواصل مع فريق الدعم عبر info@itap-tech.com."
 }

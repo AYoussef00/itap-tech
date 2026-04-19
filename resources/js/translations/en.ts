@@ -407,5 +407,28 @@ export const en = {
     'We may update this Privacy Policy from time to time. The revised version will be posted on this page with an updated "Last updated" date. We encourage you to review this policy periodically.',
   privacyS12Title: "12. Contact Us",
   privacyS12Text:
-    "For questions about this Privacy Policy or our data practices, contact us at info@itap-tech.com or via the details on our Contact page."
+    "For questions about this Privacy Policy or our data practices, contact us at info@itap-tech.com or via the details on our Contact page.",
+
+  // User Data Deletion page
+  userDeletionMetaTitle: "User Data Deletion - iTab",
+  userDeletionHeroTitle: "User Data Deletion",
+  userDeletionUpdated: "Last updated: April 13, 2026",
+  userDeletionIntro:
+    "If you would like us to delete your personal data from iTab systems, you can submit a deletion request at any time. This page explains how to request deletion and what happens after your request is received.",
+  userDeletionHowTitle: "How to Request Deletion",
+  userDeletionHow1: "Send an email to info@itap-tech.com with the subject: Data Deletion Request.",
+  userDeletionHow2: "Include enough details to identify your account (such as your registered email and phone number).",
+  userDeletionHow3: "If your request is made by an authorized representative, provide proof of authorization.",
+  userDeletionProcessTitle: "What We Do After Your Request",
+  userDeletionProcess1: "We verify your identity to protect your account and prevent unauthorized deletion.",
+  userDeletionProcess2: "We process valid requests within a reasonable period, typically within 30 days.",
+  userDeletionProcess3: "You will receive a confirmation email once deletion is completed.",
+  userDeletionExceptionsTitle: "Possible Exceptions",
+  userDeletionExceptionsText:
+    "In some cases, we may retain limited data where required by law, security obligations, fraud prevention, dispute resolution, or contractual requirements.",
+  userDeletionCallbackTitle: "Deletion Request Callback",
+  userDeletionCallbackText:
+    "For partners or platforms that require a callback URL, requests can be initiated through this page and via email. If you need a custom callback integration for your platform review, contact us and we will provide it.",
+  userDeletionContactTitle: "Need Help?",
+  userDeletionContactText: "If you have any questions, contact our support team at info@itap-tech.com."
 }

@@ -36,6 +36,10 @@ Route::get('/privacy-policy', function () {
     return Inertia::render('PrivacyPolicy');
 })->name('privacy-policy');
 
+Route::get('/user-data-deletion', function () {
+    return Inertia::render('UserDataDeletion');
+})->name('user-data-deletion');
+
 Route::get('/services/web-development', function () {
     return Inertia::render('WebDevelopment');
 })->name('web-development');
