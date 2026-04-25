@@ -212,7 +212,7 @@ Best regards,`
                        <h4 class="text-lg font-semibold mb-6">Quick Links</h4>
                        <ul class="space-y-3">
                            <li><Link href="/" class="text-gray-300 hover:text-white transition-colors">Home</Link></li>
-                           <li><Link href="/portfolio" class="text-gray-300 hover:text-white transition-colors">Projects</Link></li>
+                           <li><Link href="/#portfolio" class="text-gray-300 hover:text-white transition-colors">Projects</Link></li>
                            <li><Link href="/about-us" class="text-gray-300 hover:text-white transition-colors">About Us</Link></li>
                            <li><Link href="/contact-us" class="text-gray-300 hover:text-white transition-colors">Contact</Link></li>
                        </ul>

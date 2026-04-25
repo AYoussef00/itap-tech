@@ -89,7 +89,7 @@ const project = {
 const breadcrumbs: BreadcrumbItem[] = [
     {
         title: 'Portfolio',
-        href: '/portfolio',
+        href: '/#portfolio',
     },
     {
         title: project.title,
@@ -126,7 +126,7 @@ const getTechnologyIcon = (category: string) => {
                     <div class="max-w-7xl mx-auto px-4 w-full">
                                                     <div class="flex items-center gap-4 mb-4">
                                 <Button variant="outline" size="sm" asChild>
-                                    <Link href="/portfolio">
+                                    <Link href="/#portfolio">
                                         <ArrowLeft class="w-4 h-4 mr-2" />
                                         Back to Portfolio
                                     </Link>

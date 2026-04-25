@@ -70,7 +70,9 @@ Route::get('/services/consulting', function () {
 
 Route::get('/chatbot', [App\Http\Controllers\ChatBotPageController::class, 'index'])->name('chatbot');
 
-Route::get('portfolio', [ProjectController::class, 'publicPortfolio'])->name('portfolio');
+Route::get('portfolio', function () {
+    return redirect('/#portfolio');
+})->name('portfolio');
 
 Route::get('cv', function () {
     return Inertia::render('CV');
