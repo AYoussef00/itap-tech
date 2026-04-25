@@ -23,89 +23,251 @@ watch(currentLanguage, (newLang) => {
 
 // ChatBot is automatically registered in Vue 3 Composition API
 import {
-    Smartphone,
-    Globe,
-    Zap,
-    MessageCircle,
     Award,
-    Users,
-    Clock,
-    Shield,
-    CheckCircle,
-    Search,
-    FileText,
-    Code,
-    Rocket,
-    ShoppingCart,
-    Truck,
-    Heart,
-    CreditCard,
-    GraduationCap,
-    Building,
-    UtensilsCrossed,
-    Quote,
-    Star,
-    FileLock,
-    Lock,
-    FileCheck,
-    BadgeCheck,
-    Sparkles,
+    ArrowLeft,
     ArrowRight,
-    Monitor,
-    MessageSquare,
-    TrendingUp,
-    Package,
-    Target,
-    Wrench,
+    BadgeCheck,
+    BarChart3,
+    Bot,
+    Brain,
+    Briefcase,
+    Building,
+    Building2,
+    CheckCircle,
+    Clock,
+    Code,
+    Cpu,
+    CreditCard,
+    DollarSign,
+    Facebook,
+    Factory,
+    FileCheck,
+    FileLock,
+    FileText,
+    Globe,
+    GraduationCap,
     Headphones,
+    Heart,
+    Hotel,
+    Instagram,
+    Linkedin,
+    Lock,
+    Mail,
+    MapPin,
+    MessageCircle,
+    MessageSquare,
+    Monitor,
+    Network,
+    Package,
+    Phone,
+    Quote,
+    Rocket,
+    Search,
+    Send,
+    Settings,
+    Shield,
+    ShoppingBag,
+    ShoppingCart,
+    Smartphone,
+    Sparkles,
+    Star,
+    Target,
+    TrendingUp,
+    Truck,
+    Twitter,
+    Users,
+    UtensilsCrossed,
+    Wrench,
+    Zap,
 } from 'lucide-vue-next'
 
 // Services data
 const services = [
     {
+        icon: Globe,
+        title: 'تطوير المواقع الإلكترونية',
+        description: 'مواقع احترافية متجاوبة وسريعة مع تجربة مستخدم استثنائية',
+        color: 'from-blue-500 to-blue-600',
+        href: '/services/web-development',
+    },
+    {
         icon: Smartphone,
-        title: 'برمجة تطبيقات الهاتف',
-        description: 'تطبيقات iOS و Android احترافية بأحدث التقنيات',
+        title: 'تطبيقات الموبايل',
+        description: 'تطبيقات iOS و Android عالية الأداء وسهلة الاستخدام',
+        color: 'from-violet-500 to-violet-600',
+        href: '/services/mobile-development',
     },
     {
-        icon: Monitor,
-        title: 'برمجة المواقع',
-        description: 'مواقع ويب سريعة وعصرية بتصميم متجاوب',
+        icon: Settings,
+        title: 'تهيئة الأنظمة',
+        description: 'تحسين وتهيئة الأنظمة لأداء أفضل وأمان أعلى',
+        color: 'from-cyan-500 to-cyan-600',
+        href: '/services/cloud-devops',
     },
     {
-        icon: MessageSquare,
-        title: 'شات بوت',
-        description: 'حلول ذكية للتواصل الآلي مع عملائك',
+        icon: Bot,
+        title: 'الشات بوت والذكاء الاصطناعي',
+        description: 'روبوتات محادثة ذكية تعمل بالذكاء الاصطناعي المتقدم',
+        color: 'from-pink-500 to-pink-600',
+        href: '/services/chatbot-automation',
     },
     {
-        icon: TrendingUp,
-        title: 'التسويق الرقمي',
-        description: 'استراتيجيات تسويقية فعالة لنمو أعمالك',
+        icon: Building2,
+        title: 'أنظمة الشركات ERP/CRM',
+        description: 'حلول متكاملة لإدارة موارد الشركات والعلاقات مع العملاء',
+        color: 'from-orange-500 to-orange-600',
+        href: '/services/software-solutions',
+    },
+    {
+        icon: BarChart3,
+        title: 'تحليل البيانات',
+        description: 'تحويل البيانات إلى رؤى قيّمة لاتخاذ قرارات أفضل',
+        color: 'from-green-500 to-green-600',
+        href: '/services/digital-marketing',
+    },
+    {
+        icon: Brain,
+        title: 'حلول الذكاء الاصطناعي',
+        description: 'أنظمة ذكية متقدمة لأتمتة العمليات وتحسين الإنتاجية',
+        color: 'from-indigo-500 to-indigo-600',
+        href: '/services/consulting',
     },
 ]
 
-// Ready Projects data
-const readyProjects = [
+const aiFeatures = [
     {
-        title: 'متجر إلكتروني متكامل',
-        description: 'نظام متجر إلكتروني بلوحة تحكم ونظام دفع',
-        price: '5,000',
-        image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&q=80',
-        features: ['لوحة تحكم', 'نظام دفع', 'إدارة المنتجات', 'تطبيق موبايل'],
+        icon: Brain,
+        title: 'الذكاء الاصطناعي المتقدم',
+        description: 'تطبيق خوارزميات التعلم الآلي والتعلم العميق لحل المشكلات المعقدة',
     },
     {
-        title: 'نظام حجز مواعيد',
-        description: 'تطبيق حجز مواعيد للعيادات والصالونات',
-        price: '3,500',
-        image: 'https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?w=800&q=80',
-        features: ['تقويم مواعيد', 'إشعارات تلقائية', 'إدارة العملاء', 'تقارير'],
+        icon: Cpu,
+        title: 'معالجة اللغات الطبيعية',
+        description: 'فهم وتحليل النصوص العربية والإنجليزية بدقة عالية',
     },
     {
-        title: 'منصة تعليمية',
-        description: 'نظام LMS لإدارة الدورات والطلاب',
-        price: '7,000',
-        image: 'https://images.unsplash.com/photo-1501504905252-473c47e087f8?w=800&q=80',
-        features: ['إدارة الدورات', 'اختبارات', 'شهادات', 'بث مباشر'],
+        icon: Network,
+        title: 'التعلم الآلي',
+        description: 'بناء نماذج تنبؤية ذكية تتحسن مع الوقت والاستخدام',
+    },
+    {
+        icon: Sparkles,
+        title: 'الأتمتة الذكية',
+        description: 'أتمتة العمليات التشغيلية لتوفير الوقت والجهد',
+    },
+]
+
+const industries = [
+    {
+        icon: GraduationCap,
+        title: 'المدارس والتعليم',
+        description: 'أنظمة إدارة تعليمية متطورة ومنصات تعلم إلكتروني',
+        gradient: 'from-blue-500/10 to-blue-600/10',
+        iconColor: 'text-blue-600',
+    },
+    {
+        icon: Building,
+        title: 'الشركات والمؤسسات',
+        description: 'حلول متكاملة لإدارة العمليات وتحسين الإنتاجية',
+        gradient: 'from-violet-500/10 to-violet-600/10',
+        iconColor: 'text-violet-600',
+    },
+    {
+        icon: Hotel,
+        title: 'الفنادق والضيافة',
+        description: 'أنظمة حجز وإدارة فندقية ذكية ومتكاملة',
+        gradient: 'from-pink-500/10 to-pink-600/10',
+        iconColor: 'text-pink-600',
+    },
+    {
+        icon: Factory,
+        title: 'المصانع والإنتاج',
+        description: 'حلول أتمتة وتتبع الإنتاج وإدارة المخزون',
+        gradient: 'from-orange-500/10 to-orange-600/10',
+        iconColor: 'text-orange-600',
+    },
+    {
+        icon: ShoppingBag,
+        title: 'التجزئة والمحلات',
+        description: 'أنظمة نقاط بيع ومتاجر إلكترونية احترافية',
+        gradient: 'from-green-500/10 to-green-600/10',
+        iconColor: 'text-green-600',
+    },
+    {
+        icon: Briefcase,
+        title: 'الأعمال الحرة',
+        description: 'منصات وأدوات لإدارة المشاريع والعملاء',
+        gradient: 'from-cyan-500/10 to-cyan-600/10',
+        iconColor: 'text-cyan-600',
+    },
+]
+
+const advantages = [
+    {
+        icon: Shield,
+        title: 'أمان عالي المستوى',
+        description: 'نحمي بياناتك وأنظمتك بأحدث معايير الأمان السيبراني وبروتوكولات الحماية المتقدمة',
+        features: ['تشفير متقدم', 'نسخ احتياطي دوري', 'حماية من الاختراق'],
+        gradient: 'from-blue-500 to-blue-600',
+    },
+    {
+        icon: Zap,
+        title: 'سرعة في التنفيذ',
+        description: 'فريق محترف يعمل بكفاءة عالية لتسليم مشاريعك في الوقت المحدد بجودة استثنائية',
+        features: ['تسليم سريع', 'منهجية Agile', 'فريق متفرغ'],
+        gradient: 'from-orange-500 to-orange-600',
+    },
+    {
+        icon: DollarSign,
+        title: 'تكلفة تنافسية',
+        description: 'أسعار منافسة تناسب جميع الميزانيات مع الحفاظ على أعلى معايير الجودة والاحترافية',
+        features: ['أسعار عادلة', 'لا رسوم خفية', 'خطط مرنة'],
+        gradient: 'from-green-500 to-green-600',
+    },
+]
+
+const portfolioProjects = [
+    {
+        title: 'نظام إدارة مدرسية متكامل',
+        category: 'تعليم',
+        description: 'منصة شاملة لإدارة العمليات التعليمية والإدارية للمدارس',
+        image: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?w=800&q=80',
+        tags: ['React', 'Node.js', 'MongoDB'],
+    },
+    {
+        title: 'منصة تجارة إلكترونية',
+        category: 'تجارة',
+        description: 'متجر إلكتروني متعدد البائعين مع نظام دفع آمن',
+        image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&q=80',
+        tags: ['Next.js', 'Stripe', 'PostgreSQL'],
+    },
+    {
+        title: 'تطبيق حجز فندقي',
+        category: 'ضيافة',
+        description: 'تطبيق موبايل لحجز الغرف وإدارة الخدمات الفندقية',
+        image: 'https://images.unsplash.com/photo-1551434678-e076c223a692?w=800&q=80',
+        tags: ['React Native', 'Firebase', 'Maps API'],
+    },
+    {
+        title: 'نظام ERP للمصانع',
+        category: 'صناعة',
+        description: 'حل متكامل لإدارة الإنتاج والمخزون والمشتريات',
+        image: 'https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=800&q=80',
+        tags: ['Vue.js', 'Laravel', 'MySQL'],
+    },
+    {
+        title: 'شات بوت ذكي للدعم الفني',
+        category: 'ذكاء اصطناعي',
+        description: 'روبوت محادثة يعمل بالذكاء الاصطناعي لخدمة العملاء',
+        image: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?w=800&q=80',
+        tags: ['Python', 'TensorFlow', 'NLP'],
+    },
+    {
+        title: 'لوحة تحليل البيانات',
+        category: 'تحليلات',
+        description: 'نظام تحليل متقدم مع تقارير وإحصائيات تفاعلية',
+        image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&q=80',
+        tags: ['React', 'D3.js', 'Python'],
     },
 ]
 
@@ -190,6 +352,43 @@ const partners = computed(() => {
     }
     return [];
 });
+
+const scrollToSection = (id: string) => {
+    const element = document.getElementById(id)
+
+    if (!element) {
+        return
+    }
+
+    const top = element.getBoundingClientRect().top + window.scrollY - 88
+    window.scrollTo({ top, behavior: 'smooth' })
+}
+
+const currentYear = new Date().getFullYear()
+
+const contactForm = ref({
+    name: '',
+    email: '',
+    phone: '',
+    company: '',
+    message: '',
+})
+
+const resetContactForm = () => {
+    contactForm.value = {
+        name: '',
+        email: '',
+        phone: '',
+        company: '',
+        message: '',
+    }
+}
+
+const handleContactSubmit = () => {
+    console.log('Form submitted:', contactForm.value)
+    window.alert('شكراً لتواصلك معنا! سنرد عليك في أقرب وقت ممكن.')
+    resetContactForm()
+}
 </script>
 
 <template>
@@ -199,164 +398,369 @@ const partners = computed(() => {
     <NavBar theme="light" />
 
     <div class="min-h-screen bg-[#ffffff]">
-        <!-- Hero: خلفية بيضاء نقية (#fff) للقسم بالكامل -->
-        <section id="hero" class="relative w-full overflow-hidden bg-[#ffffff] pt-24 pb-16 md:pt-28 md:pb-24">
-            <div class="container relative z-10 mx-auto px-4">
-                <div class="mx-auto grid max-w-6xl grid-cols-1 items-center gap-14 lg:grid-cols-2 lg:gap-20">
-                    <div class="text-center lg:text-start">
-                        <div class="mb-6 inline-flex items-center gap-2 rounded-full border border-gray-200/90 bg-[#ffffff] px-4 py-1.5 text-xs font-medium tracking-wide text-gray-600">
-                            <Sparkles class="h-3.5 w-3.5 text-amber-500" />
-                            <span>الحل الأمثل لمشروعك الرقمي</span>
-                        </div>
-
-                        <h1 class="mb-6 text-balance text-4xl font-semibold leading-[1.08] tracking-tight text-gray-900 md:text-5xl lg:text-[3.25rem]">
-                            تحويل الأفكار
-                            <span class="mt-1 block text-gray-500">إلى التميز الرقمي</span>
-                        </h1>
-
-                        <p class="mx-auto mb-10 max-w-xl text-lg font-normal leading-relaxed text-gray-500 lg:mx-0">
-                            نصمم ونطور حلول ويب وموبايل مبتكرة تمكن الشركات من النمو والتفاعل والريادة من خلال التكنولوجيا.
-                        </p>
-
-                        <div class="flex flex-wrap items-center justify-center gap-3 lg:justify-start">
-                            <Button size="lg" class="h-12 rounded-full bg-gray-900 px-8 text-[15px] font-medium text-white shadow-sm hover:bg-gray-800">
-                                ابدأ مشروعك الآن
-                                <ArrowRight class="ms-2 h-4 w-4" />
-                            </Button>
-                            <Link
-                                href="/contact-us"
-                                class="inline-flex h-12 items-center rounded-full border border-gray-300 bg-white px-6 text-[15px] font-medium text-gray-800 transition-colors hover:bg-gray-50"
-                            >
-                                تواصل معنا
-                            </Link>
-                        </div>
-
-                        <div class="mx-auto mt-14 grid max-w-md grid-cols-3 gap-6 border-t border-gray-100 pt-10 lg:mx-0">
-                            <div v-for="stat in [{ number: '500+', label: 'عميل' }, { number: '1000+', label: 'مشروع' }, { number: '98%', label: 'رضا العملاء' }]" :key="stat.label" class="text-center lg:text-start">
-                                <div class="text-2xl font-semibold tracking-tight text-gray-900 md:text-3xl">{{ stat.number }}</div>
-                                <div class="mt-0.5 text-xs font-medium text-gray-500">{{ stat.label }}</div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="relative mx-auto w-full max-w-xl lg:max-w-none">
-                        <div
-                            class="overflow-hidden rounded-[2rem] border border-gray-100 bg-[#ffffff] shadow-[0_16px_48px_rgba(0,0,0,0.04)]"
-                        >
-                            <img
-                                src="/asset/conceptual-technology-illustration-artificial-intelligence-isolated-white-background_660230-73128.avif"
-                                alt="رسم توضيحي لتقنيات الذكاء الاصطناعي والحلول الرقمية"
-                                class="h-auto w-full object-contain"
-                                loading="eager"
-                                decoding="async"
-                                @error="(e) => { (e.target as HTMLImageElement).src = '/asset/bk.jpg' }"
-                            />
-                        </div>
-                    </div>
-                </div>
+        <section id="hero" class="relative flex min-h-screen items-center justify-center overflow-hidden bg-gradient-to-br from-white via-blue-50 to-blue-100">
+            <div class="absolute inset-0 overflow-hidden">
+                <div class="absolute right-1/4 top-1/4 h-72 w-72 rounded-full bg-blue-200/30 blur-3xl md:h-96 md:w-96"></div>
+                <div class="absolute bottom-1/4 left-1/4 h-72 w-72 rounded-full bg-violet-200/20 blur-3xl md:h-96 md:w-96"></div>
             </div>
 
-            <div class="pointer-events-none absolute bottom-6 left-1/2 hidden -translate-x-1/2 md:block">
-                <div class="flex h-9 w-6 items-start justify-center rounded-full border border-gray-200 pt-2">
-                    <div class="h-1.5 w-0.5 rounded-full bg-gray-300"></div>
+            <div class="relative mx-auto max-w-7xl px-4 py-24 text-center sm:px-6 md:py-28 lg:px-8 lg:py-32">
+                <div class="mb-6 inline-flex max-w-full items-center gap-2 rounded-full bg-blue-100 px-4 py-2 text-blue-700">
+                    <Sparkles class="h-4 w-4" />
+                    <span class="text-xs sm:text-sm">حلول تقنية متقدمة للمستقبل الرقمي</span>
+                </div>
+
+                <h1 class="mb-6 text-4xl font-bold leading-tight text-gray-900 sm:text-5xl md:text-6xl lg:text-7xl">
+                    نحو مستقبل رقمي
+                    <br />
+                    <span class="bg-gradient-to-r from-blue-600 to-violet-600 bg-clip-text text-transparent">
+                        أكثر ذكاءً
+                    </span>
+                </h1>
+
+                <p class="mx-auto mb-10 max-w-3xl text-base leading-8 text-gray-600 sm:text-lg md:text-xl">
+                    نقدم حلولاً تقنية متكاملة تشمل تطوير المواقع والتطبيقات، أنظمة الذكاء الاصطناعي، وحلول الأعمال المتقدمة للشركات والمؤسسات في السعودية ومصر
+                </p>
+
+                <div class="flex flex-col items-center justify-center gap-4 sm:flex-row">
+                    <Link
+                        href="/contact-us"
+                        class="group inline-flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-8 py-4 text-white transition-all hover:shadow-2xl sm:w-auto"
+                    >
+                        <span>ابدأ مشروعك الآن</span>
+                        <ArrowLeft class="h-5 w-5 transition-transform group-hover:-translate-x-1" />
+                    </Link>
+
+                    <button
+                        type="button"
+                        class="w-full rounded-xl border-2 border-gray-200 bg-white px-8 py-4 text-gray-900 transition-all hover:border-blue-600 hover:shadow-lg sm:w-auto"
+                        @click="scrollToSection('services')"
+                    >
+                        استكشف خدماتنا
+                    </button>
+                </div>
+
+                <div class="mx-auto mt-16 grid max-w-4xl grid-cols-2 gap-6 md:mt-20 md:gap-8 md:grid-cols-4">
+                    <div class="text-center">
+                        <div class="mb-2 text-3xl font-bold text-blue-600 md:text-4xl">+500</div>
+                        <div class="text-sm text-gray-600">مشروع مكتمل</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="mb-2 text-3xl font-bold text-blue-600 md:text-4xl">+200</div>
+                        <div class="text-sm text-gray-600">عميل راضٍ</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="mb-2 text-3xl font-bold text-blue-600 md:text-4xl">99%</div>
+                        <div class="text-sm text-gray-600">معدل الرضا</div>
+                    </div>
+                    <div class="text-center">
+                        <div class="mb-2 text-3xl font-bold text-blue-600 md:text-4xl">24/7</div>
+                        <div class="text-sm text-gray-600">دعم فني</div>
+                    </div>
                 </div>
             </div>
         </section>
 
         <!-- Our Services -->
-        <section id="services" class="border-t border-gray-200/80 bg-white py-20">
-            <div class="container mx-auto px-4">
-                <div class="mb-16 text-center animate-fade-in-up">
-                    <h2 class="mb-3 text-3xl font-semibold tracking-tight text-gray-900 md:text-4xl">خدماتنا</h2>
-                    <p class="mx-auto max-w-2xl text-base text-gray-500 md:text-lg">
-                        كل ذلك في مكان واحد، مدعوم بتجربة استخدام واضحة وهادئة.
+        <section id="services" class="bg-white py-16 md:py-24">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="mb-12 text-center md:mb-16">
+                    <h2 class="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl md:text-5xl">
+                        خدماتنا التقنية
+                    </h2>
+                    <p class="mx-auto max-w-2xl text-base leading-7 text-gray-600 sm:text-lg md:text-xl">
+                        نقدم مجموعة شاملة من الحلول التقنية المتطورة لتلبية جميع احتياجات عملك الرقمي
                     </p>
                 </div>
 
-                <div class="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-4">
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
                     <div
-                        v-for="(service, index) in services"
+                        v-for="service in services"
                         :key="service.title"
-                        class="service-card"
-                        :style="{ animationDelay: `${index * 0.1}s` }"
+                        class="group rounded-2xl border border-gray-200 bg-white p-6 transition-all duration-300 hover:border-blue-200 hover:shadow-2xl md:p-8"
                     >
-                        <Card class="h-full rounded-3xl border border-gray-100 bg-[#fbfbfd] p-6 shadow-sm transition-shadow duration-300 hover:shadow-md">
-                            <div class="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-gray-900 text-white">
-                                <component :is="service.icon" class="h-6 w-6" />
-                            </div>
-                            <h3 class="mb-2 text-lg font-semibold tracking-tight text-gray-900">{{ service.title }}</h3>
-                            <p class="text-sm leading-relaxed text-gray-500">{{ service.description }}</p>
-                        </Card>
+                        <div
+                            class="mb-6 flex h-16 w-16 items-center justify-center rounded-xl bg-gradient-to-br transition-transform group-hover:scale-110"
+                            :class="service.color"
+                        >
+                            <component :is="service.icon" class="h-8 w-8 text-white" />
+                        </div>
+                        <h3 class="mb-3 text-xl font-bold text-gray-900 md:text-2xl">
+                            {{ service.title }}
+                        </h3>
+                        <p class="mb-4 leading-relaxed text-gray-600">
+                            {{ service.description }}
+                        </p>
+                        <Link
+                            :href="service.href"
+                            class="flex items-center gap-1 text-blue-600 transition-all group-hover:text-blue-700 hover:gap-2"
+                        >
+                            <span>اعرف المزيد</span>
+                            <ArrowLeft class="h-4 w-4" />
+                        </Link>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Ready Projects -->
-        <section id="projects" class="py-20 bg-white">
-            <div class="container mx-auto px-4">
-                <div class="text-center mb-16 animate-fade-in-up">
-                    <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-4">المشاريع الجاهزة</h2>
-                    <p class="opacity-70 max-w-2xl mx-auto text-lg md:text-xl">
-                        حلول جاهزة وقابلة للتخصيص بأسعار تنافسية
+        <section id="industries" class="bg-gradient-to-b from-gray-50 to-white py-16 md:py-24">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="mb-12 text-center md:mb-16">
+                    <h2 class="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl md:text-5xl">
+                        القطاعات التي نخدمها
+                    </h2>
+                    <p class="mx-auto max-w-2xl text-base leading-7 text-gray-600 sm:text-lg md:text-xl">
+                        خبرة واسعة في خدمة مختلف القطاعات بحلول تقنية مخصصة لكل مجال
                     </p>
-                    </div>
-                    
-                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
+                </div>
+
+                <div class="grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-3">
                     <div
-                        v-for="(project, index) in readyProjects"
-                        :key="project.title"
-                        class="project-card"
-                        :style="{ animationDelay: `${index * 0.1}s` }"
+                        v-for="industry in industries"
+                        :key="industry.title"
+                        class="group cursor-pointer rounded-2xl border border-gray-200 bg-gradient-to-br p-6 backdrop-blur-sm transition-all duration-300 hover:shadow-xl md:p-8"
+                        :class="industry.gradient"
                     >
-                        <Card class="p-0 h-full flex flex-col hover:shadow-xl transition-shadow duration-300 overflow-hidden">
-                            <!-- Project Image -->
-                            <div class="w-full h-48 overflow-hidden bg-gray-200">
-                                <img
-                                    :src="project.image"
-                                    :alt="project.title"
-                                    class="w-full h-full object-cover"
-                                    @error="(e) => { (e.target as HTMLImageElement).src = '/asset/bk.jpg' }"
-                                />
+                        <div class="flex items-start gap-4">
+                            <div :class="[industry.iconColor, 'transition-transform group-hover:scale-110']">
+                                <component :is="industry.icon" class="h-10 w-10" :stroke-width="1.5" />
+                            </div>
+                            <div class="flex-1">
+                                <h3 class="mb-2 text-xl font-bold text-gray-900">
+                                    {{ industry.title }}
+                                </h3>
+                                <p class="leading-relaxed text-gray-600">
+                                    {{ industry.description }}
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                            
-                            <div class="p-6 flex flex-col flex-grow">
-                                <h3 class="text-xl font-bold text-gray-900 mb-3">{{ project.title }}</h3>
-                                <p class="opacity-70 text-gray-600 mb-4">{{ project.description }}</p>
-                            
-                            <div class="mb-4">
-                                <div class="flex items-baseline gap-1 mb-2">
-                                    <span class="text-3xl font-bold text-blue-600">{{ project.price }}</span>
-                                    <span class="opacity-70">ريال</span>
                 </div>
+            </div>
+        </section>
+
+        <section class="bg-white py-16 md:py-24">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="mb-12 text-center md:mb-16">
+                    <h2 class="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl md:text-5xl">
+                        لماذا تختارنا؟
+                    </h2>
+                    <p class="mx-auto max-w-2xl text-base leading-7 text-gray-600 sm:text-lg md:text-xl">
+                        نتميز بمزايا فريدة تجعلنا الخيار الأمثل لشركتك
+                    </p>
                 </div>
 
-                            <ul class="space-y-2 mb-6 flex-grow">
-                                <li 
-                                    v-for="feature in project.features"
-                                    :key="feature"
-                                    class="flex items-center gap-2"
+                <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+                    <div
+                        v-for="advantage in advantages"
+                        :key="advantage.title"
+                        class="group relative overflow-hidden rounded-3xl border border-gray-200 bg-white p-6 transition-all duration-300 hover:shadow-2xl md:p-8"
+                    >
+                        <div class="absolute left-0 top-0 h-1 w-full bg-gradient-to-r" :class="advantage.gradient"></div>
+
+                        <div
+                            class="mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br transition-transform group-hover:scale-110"
+                            :class="advantage.gradient"
+                        >
+                            <component :is="advantage.icon" class="h-9 w-9 text-white" />
+                        </div>
+
+                        <h3 class="mb-4 text-xl font-bold text-gray-900 md:text-2xl">
+                            {{ advantage.title }}
+                        </h3>
+
+                        <p class="mb-6 leading-relaxed text-gray-600">
+                            {{ advantage.description }}
+                        </p>
+
+                        <div class="space-y-3">
+                            <div
+                                v-for="feature in advantage.features"
+                                :key="feature"
+                                class="flex items-center gap-2"
+                            >
+                                <CheckCircle class="h-5 w-5 shrink-0 text-green-500" />
+                                <span class="text-gray-900">{{ feature }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-12 rounded-3xl bg-gradient-to-r from-blue-50 to-violet-50 p-6 text-center md:mt-16 md:p-12">
+                    <h3 class="mb-4 text-2xl font-bold text-gray-900 md:text-3xl">
+                        جاهز للبدء؟
+                    </h3>
+                    <p class="mx-auto mb-8 max-w-2xl text-base leading-7 text-gray-600 sm:text-lg md:text-xl">
+                        انضم إلى +200 عميل راضٍ واستفد من خبرتنا في تطوير الحلول التقنية
+                    </p>
+                    <button
+                        type="button"
+                        class="w-full rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-8 py-4 text-white transition-all hover:shadow-2xl sm:w-auto sm:px-10"
+                        @click="scrollToSection('contact')"
+                    >
+                        احصل على استشارة مجانية
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="portfolio" class="bg-gradient-to-b from-white to-gray-50 py-16 md:py-24">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="mb-12 text-center md:mb-16">
+                    <h2 class="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl md:text-5xl">
+                        أعمالنا المميزة
+                    </h2>
+                    <p class="mx-auto max-w-2xl text-base leading-7 text-gray-600 sm:text-lg md:text-xl">
+                        اطلع على بعض المشاريع التي أنجزناها بنجاح لعملائنا
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3">
+                    <div
+                        v-for="project in portfolioProjects"
+                        :key="project.title"
+                        class="group overflow-hidden rounded-2xl border border-gray-200 bg-white transition-all duration-300 hover:shadow-2xl"
+                    >
+                        <div class="relative h-48 overflow-hidden bg-gradient-to-br from-blue-100 to-violet-100">
+                            <img
+                                :src="project.image"
+                                :alt="project.title"
+                                class="h-full w-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                @error="(e) => { (e.target as HTMLImageElement).src = '/asset/bk.jpg' }"
+                            />
+
+                            <div class="absolute right-4 top-4">
+                                <span class="rounded-full bg-white/90 px-3 py-1 text-sm font-medium text-gray-900 backdrop-blur-sm">
+                                    {{ project.category }}
+                                </span>
+                            </div>
+                        </div>
+
+                        <div class="p-5 md:p-6">
+                            <h3 class="mb-2 text-xl font-bold text-gray-900 transition-colors group-hover:text-blue-600">
+                                {{ project.title }}
+                            </h3>
+                            <p class="mb-4 leading-relaxed text-gray-600">
+                                {{ project.description }}
+                            </p>
+
+                            <div class="mb-4 flex flex-wrap gap-2">
+                                <span
+                                    v-for="tag in project.tags"
+                                    :key="tag"
+                                    class="rounded-full bg-blue-50 px-3 py-1 text-xs text-blue-700"
                                 >
-                                    <div class="w-5 h-5 rounded-full bg-blue-100 flex items-center justify-center flex-shrink-0">
-                                        <div class="w-2 h-2 rounded-full bg-blue-600"></div>
-                    </div>
-                                    <span class="opacity-70 text-gray-600">{{ feature }}</span>
-                                </li>
-                            </ul>
+                                    {{ tag }}
+                                </span>
+                            </div>
 
-                                <Button class="w-full text-white mt-auto" style="background-color: #4b3da6;" onmouseover="this.style.backgroundColor='#3d2d85'" onmouseout="this.style.backgroundColor='#4b3da6'">
-                                    اطلب الآن
-                                    <ArrowRight class="mr-2 h-4 w-4" />
-                                </Button>
+                        </div>
                     </div>
-                        </Card>
+                </div>
+            </div>
+        </section>
+
+        <section class="relative overflow-hidden bg-gradient-to-br from-slate-900 to-slate-800 py-16 text-white md:py-24">
+            <div class="absolute inset-0 opacity-10">
+                <div class="absolute right-0 top-0 h-72 w-72 rounded-full bg-blue-500 blur-3xl md:h-96 md:w-96"></div>
+                <div class="absolute bottom-0 left-0 h-72 w-72 rounded-full bg-violet-500 blur-3xl md:h-96 md:w-96"></div>
+            </div>
+
+            <div class="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="grid grid-cols-1 items-center gap-12 lg:grid-cols-2">
+                    <div>
+                        <div class="mb-6 inline-flex items-center gap-2 rounded-full bg-blue-500/20 px-4 py-2">
+                            <Sparkles class="h-4 w-4" />
+                            <span class="text-sm">تقنيات المستقبل</span>
+                        </div>
+
+                        <h2 class="mb-6 text-3xl font-bold leading-tight sm:text-4xl md:text-5xl">
+                            نستخدم أحدث تقنيات
+                            <br />
+                            <span class="bg-gradient-to-r from-blue-400 to-violet-400 bg-clip-text text-transparent">
+                                الذكاء الاصطناعي
+                            </span>
+                        </h2>
+
+                        <p class="mb-8 text-base leading-8 text-gray-300 sm:text-lg md:text-xl">
+                            نوظف أحدث تقنيات الذكاء الاصطناعي والتعلم الآلي لبناء حلول ذكية تساعد عملك على النمو والتطور في العصر الرقمي
+                        </p>
+
+                        <div class="grid grid-cols-1 gap-6 sm:grid-cols-2">
+                            <div
+                                v-for="feature in aiFeatures"
+                                :key="feature.title"
+                                class="flex items-start gap-3"
+                            >
+                                <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-blue-500/20">
+                                    <component :is="feature.icon" class="h-6 w-6 text-blue-400" />
+                                </div>
+                                <div>
+                                    <h3 class="mb-1 font-bold">{{ feature.title }}</h3>
+                                    <p class="text-sm text-gray-400">{{ feature.description }}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <button
+                            type="button"
+                            class="mt-8 w-full rounded-xl bg-white px-8 py-4 font-medium text-slate-900 transition-all hover:shadow-2xl sm:w-auto"
+                            @click="scrollToSection('contact')"
+                        >
+                            اكتشف حلولنا الذكية
+                        </button>
+                    </div>
+
+                    <div class="relative">
+                        <div class="rounded-3xl border border-white/10 bg-gradient-to-br from-blue-500/10 to-violet-500/10 p-5 backdrop-blur-sm sm:p-6 md:p-8">
+                            <div class="grid grid-cols-2 gap-4 sm:gap-6">
+                                <div class="rounded-2xl border border-blue-400/20 bg-blue-500/20 p-4 backdrop-blur-sm sm:p-6">
+                                    <div class="mb-2 text-3xl font-bold sm:text-4xl">98%</div>
+                                    <div class="text-sm text-gray-300">دقة النماذج</div>
+                                </div>
+                                <div class="rounded-2xl border border-violet-400/20 bg-violet-500/20 p-4 backdrop-blur-sm sm:p-6">
+                                    <div class="mb-2 text-3xl font-bold sm:text-4xl">50+</div>
+                                    <div class="text-sm text-gray-300">مشروع AI</div>
+                                </div>
+                                <div class="rounded-2xl border border-pink-400/20 bg-pink-500/20 p-4 backdrop-blur-sm sm:p-6">
+                                    <div class="mb-2 text-3xl font-bold sm:text-4xl">10x</div>
+                                    <div class="text-sm text-gray-300">تحسين الكفاءة</div>
+                                </div>
+                                <div class="rounded-2xl border border-cyan-400/20 bg-cyan-500/20 p-4 backdrop-blur-sm sm:p-6">
+                                    <div class="mb-2 text-3xl font-bold sm:text-4xl">24/7</div>
+                                    <div class="text-sm text-gray-300">عمل مستمر</div>
+                                </div>
+                            </div>
+
+                            <div class="mt-6 rounded-2xl border border-white/10 bg-white/5 p-5 backdrop-blur-sm sm:mt-8 sm:p-6">
+                                <div class="mb-4 flex items-center gap-3">
+                                    <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br from-blue-500 to-violet-500">
+                                        <Brain class="h-5 w-5" />
+                                    </div>
+                                    <div>
+                                        <div class="font-bold">نموذج ذكي متقدم</div>
+                                        <div class="text-xs text-gray-400">قيد التشغيل</div>
+                                    </div>
+                                </div>
+
+                                <div class="space-y-2">
+                                    <div class="h-2 overflow-hidden rounded-full bg-white/10">
+                                        <div class="h-full w-[95%] bg-gradient-to-r from-blue-500 to-violet-500"></div>
+                                    </div>
+                                    <div class="text-left text-xs text-gray-400">معالجة البيانات: 95%</div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="absolute -right-6 -top-6 h-32 w-32 rounded-full bg-blue-500/20 blur-2xl"></div>
+                        <div class="absolute -bottom-6 -left-6 h-32 w-32 rounded-full bg-violet-500/20 blur-2xl"></div>
                     </div>
                 </div>
             </div>
         </section>
 
         <!-- App Section -->
-        <section class="py-20 bg-white">
+        <section class="hidden py-20 bg-white">
             <div class="container mx-auto px-4">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
                     <div class="app-section-left animate-slide-in-left">
@@ -416,7 +820,7 @@ const partners = computed(() => {
         </section>
 
         <!-- Website Section -->
-        <section class="py-20 bg-white">
+        <section class="hidden py-20 bg-white">
             <div class="container mx-auto px-4">
                 <div class="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
                     <div class="relative order-2 lg:order-1 website-section-left animate-slide-in-left">
@@ -473,7 +877,7 @@ const partners = computed(() => {
         </section>
 
         <!-- Goals Section -->
-        <section class="relative overflow-hidden border-t border-gray-200/80 bg-[#f5f5f7] py-20 text-gray-900">
+        <section class="hidden relative overflow-hidden border-t border-gray-200/80 bg-[#f5f5f7] py-20 text-gray-900">
             <div class="container relative z-10 mx-auto px-4">
                 <div class="mb-16 animate-fade-in-up text-center">
                     <h2 class="mb-3 text-3xl font-semibold tracking-tight md:text-4xl">هدفنا لعام 2026</h2>
@@ -500,7 +904,7 @@ const partners = computed(() => {
         </section>
 
         <!-- About Us Section -->
-        <section id="about" class="py-20 bg-gray-50">
+        <section id="about" class="hidden py-20 bg-gray-50">
             <div class="container mx-auto px-4">
                 <div class="text-center mb-16 max-w-3xl mx-auto animate-fade-in-up">
                     <h2 class="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6">
@@ -686,7 +1090,7 @@ const partners = computed(() => {
         </section>
 
         <!-- Why Choose Us -->
-        <section class="py-20 px-4 bg-white">
+        <section class="hidden py-20 px-4 bg-white">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">{{ t('whyChooseUsTitle') }}</h2>
@@ -777,7 +1181,7 @@ const partners = computed(() => {
         </section>
 
         <!-- How We Work (Process) -->
-        <section class="py-20 px-4 bg-gray-50">
+        <section class="hidden py-20 px-4 bg-gray-50">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">{{ t('howWeWorkTitle') }}</h2>
@@ -888,7 +1292,7 @@ const partners = computed(() => {
         </section>
 
         <!-- Industries We Serve -->
-        <section class="py-20 px-4 bg-white">
+        <section class="hidden py-20 px-4 bg-white">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">{{ t('industriesTitle') }}</h2>
@@ -979,7 +1383,7 @@ const partners = computed(() => {
         </section>
 
         <!-- Testimonials -->
-        <section class="py-20 px-4 bg-gray-50">
+        <section class="hidden py-20 px-4 bg-gray-50">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">{{ t('testimonialsTitle') }}</h2>
@@ -1137,7 +1541,7 @@ const partners = computed(() => {
         </section>
 
         <!-- Our Partners Section -->
-        <section class="py-20 px-4 bg-white">
+        <section class="hidden py-20 px-4 bg-white">
             <div class="max-w-7xl mx-auto">
                 <div class="text-center mb-16">
                     <h2 class="text-4xl md:text-6xl font-bold text-gray-900 mb-6">{{ t('partnersTitle') }}</h2>
@@ -1176,67 +1580,375 @@ const partners = computed(() => {
             </div>
         </section>
 
-        <!-- Footer -->
-        <footer class="border-t border-gray-200 bg-white text-gray-900">
-            <div class="mx-auto max-w-7xl px-4 py-14">
-                <div class="flex flex-col items-center justify-center space-y-8">
-                    <!-- Company Logo -->
-                    <div class="text-center">
-                        <Link href="/" class="flex items-center justify-center">
+        <section class="hidden bg-white py-24">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="mb-16 text-center">
+                    <h2 class="mb-4 text-4xl font-bold text-gray-900 md:text-5xl">
+                        لماذا تختارنا؟
+                    </h2>
+                    <p class="mx-auto max-w-2xl text-xl text-gray-600">
+                        نتميز بمزايا فريدة تجعلنا الخيار الأمثل لشركتك
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 gap-8 lg:grid-cols-3">
+                    <div
+                        v-for="advantage in advantages"
+                        :key="advantage.title"
+                        class="group relative overflow-hidden rounded-3xl border border-gray-200 bg-white p-8 transition-all duration-300 hover:shadow-2xl"
+                    >
+                        <div class="absolute left-0 top-0 h-1 w-full bg-gradient-to-r" :class="advantage.gradient"></div>
+
+                        <div
+                            class="mb-6 flex h-20 w-20 items-center justify-center rounded-2xl bg-gradient-to-br transition-transform group-hover:scale-110"
+                            :class="advantage.gradient"
+                        >
+                            <component :is="advantage.icon" class="h-9 w-9 text-white" />
+                        </div>
+
+                        <h3 class="mb-4 text-2xl font-bold text-gray-900">
+                            {{ advantage.title }}
+                        </h3>
+
+                        <p class="mb-6 leading-relaxed text-gray-600">
+                            {{ advantage.description }}
+                        </p>
+
+                        <div class="space-y-3">
+                            <div
+                                v-for="feature in advantage.features"
+                                :key="feature"
+                                class="flex items-center gap-2"
+                            >
+                                <CheckCircle class="h-5 w-5 shrink-0 text-green-500" />
+                                <span class="text-gray-900">{{ feature }}</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="mt-16 rounded-3xl bg-gradient-to-r from-blue-50 to-violet-50 p-12 text-center">
+                    <h3 class="mb-4 text-3xl font-bold text-gray-900">
+                        جاهز للبدء؟
+                    </h3>
+                    <p class="mx-auto mb-8 max-w-2xl text-xl text-gray-600">
+                        انضم إلى +200 عميل راضٍ واستفد من خبرتنا في تطوير الحلول التقنية
+                    </p>
+                    <button
+                        type="button"
+                        class="rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-10 py-4 text-white transition-all hover:shadow-2xl"
+                        @click="scrollToSection('contact')"
+                    >
+                        احصل على استشارة مجانية
+                    </button>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="bg-gradient-to-b from-slate-50 via-white to-slate-50 py-16 md:py-24">
+            <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+                <div class="mb-12 text-center md:mb-16">
+                    <div class="mb-4 inline-flex items-center gap-2 rounded-full border border-blue-100 bg-blue-50 px-4 py-2 text-sm font-medium text-blue-700">
+                        <span class="h-2 w-2 rounded-full bg-blue-500"></span>
+                        <span>نحن هنا لخدمتك</span>
+                    </div>
+                    <h2 class="mb-4 text-3xl font-bold text-gray-900 sm:text-4xl md:text-5xl">
+                        تواصل معنا
+                    </h2>
+                    <p class="mx-auto max-w-2xl text-base leading-7 text-gray-600 sm:text-lg md:text-xl">
+                        نحن هنا للإجابة على جميع استفساراتك ومساعدتك في تحويل أفكارك إلى واقع
+                    </p>
+                </div>
+
+                <div class="grid grid-cols-1 gap-8 lg:grid-cols-[0.95fr_1.05fr] xl:gap-12">
+                    <div>
+                        <div class="space-y-8">
+                            <div>
+                                <h3 class="mb-3 text-2xl font-bold text-gray-900">
+                                    معلومات التواصل
+                                </h3>
+                                <p class="mb-6 max-w-lg text-base leading-7 text-gray-600">
+                                    يمكنك التواصل معنا مباشرة عبر الهاتف أو البريد الإلكتروني، أو إرسال طلبك من خلال النموذج وسنعاود الرد عليك في أقرب وقت.
+                                </p>
+
+                                <div class="space-y-4">
+                                    <div class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+                                        <div class="flex items-start gap-4">
+                                            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-blue-100">
+                                                <Phone class="h-6 w-6 text-blue-600" />
+                                            </div>
+                                            <div class="min-w-0">
+                                                <div class="mb-1 text-sm font-semibold text-gray-500">الهاتف</div>
+                                                <div class="text-base font-medium text-gray-900" dir="ltr">+966 53 581 5072</div>
+                                                <div class="text-base font-medium text-gray-700" dir="ltr">+20 101 584 3432</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+                                        <div class="flex items-start gap-4">
+                                            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-violet-100">
+                                                <Mail class="h-6 w-6 text-violet-600" />
+                                            </div>
+                                            <div class="min-w-0">
+                                                <div class="mb-1 text-sm font-semibold text-gray-500">البريد الإلكتروني</div>
+                                                <div class="text-base font-medium text-gray-900" dir="ltr">info@itap-tech.com</div>
+                                                <div class="text-base font-medium text-gray-700" dir="ltr">marketing@itap-tech.com</div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="rounded-2xl border border-gray-200 bg-white p-5 shadow-sm">
+                                        <div class="flex items-start gap-4">
+                                            <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-green-100">
+                                                <MapPin class="h-6 w-6 text-green-600" />
+                                            </div>
+                                            <div class="min-w-0">
+                                                <div class="mb-1 text-sm font-semibold text-gray-500">المكاتب</div>
+                                                <div class="text-base font-medium text-gray-900">الرياض، المملكة العربية السعودية</div>
+                                                <div class="text-base font-medium text-gray-700">القاهرة، جمهورية مصر العربية</div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="rounded-3xl border border-blue-100 bg-gradient-to-br from-blue-50 via-white to-violet-50 p-6 shadow-sm md:p-8">
+                                <div class="mb-5">
+                                    <div>
+                                        <h4 class="text-xl font-bold text-gray-900">
+                                            ساعات العمل
+                                        </h4>
+                                        <p class="mt-1 text-sm text-gray-600">
+                                            متواجدون للرد على استفساراتك خلال أيام العمل والدعم الفني متاح دائمًا.
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="space-y-3 text-gray-700">
+                                    <div class="flex flex-col gap-1 rounded-2xl bg-white/80 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+                                        <span class="font-medium">السبت - الخميس</span>
+                                        <span dir="ltr" class="text-sm font-semibold text-gray-900 sm:text-base">9:00 ص - 6:00 م</span>
+                                    </div>
+                                    <div class="flex flex-col gap-1 rounded-2xl bg-white/80 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+                                        <span class="font-medium">الجمعة</span>
+                                        <span class="text-sm font-semibold text-gray-900 sm:text-base">مغلق</span>
+                                    </div>
+                                    <div class="flex flex-col gap-1 rounded-2xl bg-white/80 px-4 py-3 sm:flex-row sm:items-center sm:justify-between">
+                                        <span class="font-medium">الدعم الفني</span>
+                                        <span dir="ltr" class="text-sm font-semibold text-gray-900 sm:text-base">24/7</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div>
+                        <form class="rounded-3xl border border-gray-200 bg-white p-6 shadow-[0_20px_60px_rgba(15,23,42,0.08)] md:p-8" @submit.prevent="handleContactSubmit">
+                            <div class="mb-8 border-b border-gray-100 pb-6">
+                                <h3 class="text-2xl font-bold text-gray-900">أرسل لنا رسالتك</h3>
+                                <p class="mt-2 text-base leading-7 text-gray-600">
+                                    شاركنا فكرتك أو احتياجك التقني وسيتواصل معك فريقنا بالحل المناسب خلال وقت قصير.
+                                </p>
+                            </div>
+
+                            <div class="space-y-6">
+                                <div class="grid grid-cols-1 gap-6 md:grid-cols-2">
+                                    <div>
+                                        <label for="contact-name" class="mb-2 block text-sm font-semibold text-gray-800">
+                                            الاسم الكامل *
+                                        </label>
+                                        <input
+                                            id="contact-name"
+                                            v-model="contactForm.name"
+                                            type="text"
+                                            required
+                                            class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3.5 transition-all focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-blue-100"
+                                            placeholder="أدخل اسمك الكامل"
+                                        />
+                                    </div>
+
+                                    <div>
+                                        <label for="contact-phone" class="mb-2 block text-sm font-semibold text-gray-800">
+                                            رقم الهاتف *
+                                        </label>
+                                        <input
+                                            id="contact-phone"
+                                            v-model="contactForm.phone"
+                                            type="tel"
+                                            required
+                                            dir="ltr"
+                                            class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3.5 transition-all focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-blue-100"
+                                            placeholder="+966 53 581 5072"
+                                        />
+                                    </div>
+                                </div>
+
+                                <div>
+                                    <label for="contact-email" class="mb-2 block text-sm font-semibold text-gray-800">
+                                        البريد الإلكتروني *
+                                    </label>
+                                    <input
+                                        id="contact-email"
+                                        v-model="contactForm.email"
+                                        type="email"
+                                        required
+                                        dir="ltr"
+                                        class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3.5 transition-all focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-blue-100"
+                                        placeholder="example@email.com"
+                                    />
+                                </div>
+
+                                <div>
+                                    <label for="contact-company" class="mb-2 block text-sm font-semibold text-gray-800">
+                                        اسم الشركة
+                                    </label>
+                                    <input
+                                        id="contact-company"
+                                        v-model="contactForm.company"
+                                        type="text"
+                                        class="w-full rounded-xl border border-gray-200 bg-gray-50 px-4 py-3.5 transition-all focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-blue-100"
+                                        placeholder="اسم شركتك (اختياري)"
+                                    />
+                                </div>
+
+                                <div>
+                                    <label for="contact-message" class="mb-2 block text-sm font-semibold text-gray-800">
+                                        الرسالة *
+                                    </label>
+                                    <textarea
+                                        id="contact-message"
+                                        v-model="contactForm.message"
+                                        required
+                                        rows="6"
+                                        class="w-full resize-none rounded-xl border border-gray-200 bg-gray-50 px-4 py-3.5 transition-all focus:border-blue-500 focus:bg-white focus:outline-none focus:ring-4 focus:ring-blue-100"
+                                        placeholder="اكتب رسالتك هنا..."
+                                    ></textarea>
+                                </div>
+
+                                <button
+                                    type="submit"
+                                    class="group flex w-full items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-violet-600 px-8 py-4 text-base font-semibold text-white transition-all hover:shadow-2xl"
+                                >
+                                    <span>إرسال الرسالة</span>
+                                    <Send class="h-5 w-5 transition-transform group-hover:translate-x-1" />
+                                </button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="bg-slate-900 text-white">
+            <div class="mx-auto max-w-7xl px-4 py-12 sm:px-6 lg:px-8">
+                <div class="mb-8 grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-4">
+                    <div class="text-center lg:text-right">
+                        <div class="mb-4 flex items-center justify-center lg:justify-start">
                             <img
                                 src="/asset/Black_White_Minimal_Modern_Simple_Bold_Business_Mag_Logo__1_-removebg-preview.png"
                                 alt="iTab Logo"
-                                class="h-10 w-auto md:h-11"
+                                class="h-12 w-auto"
                             />
-                        </Link>
+                        </div>
+
+                        <p class="mb-4 leading-relaxed text-gray-300">
+                            نقدم حلولاً تقنية متكاملة للشركات والمؤسسات في السعودية ومصر مع التركيز على الجودة والابتكار
+                        </p>
+
+                        <div class="flex justify-center gap-3 lg:justify-start">
+                            <a
+                                href="https://www.facebook.com/profile.php?id=61585174361896"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 transition-colors hover:bg-white/20"
+                            >
+                                <Facebook class="h-5 w-5" />
+                            </a>
+                            <a
+                                href="https://x.com"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 transition-colors hover:bg-white/20"
+                            >
+                                <Twitter class="h-5 w-5" />
+                            </a>
+                            <a
+                                href="https://www.linkedin.com/company/itap-solution"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 transition-colors hover:bg-white/20"
+                            >
+                                <Linkedin class="h-5 w-5" />
+                            </a>
+                            <a
+                                href="https://www.instagram.com/itap_solution/"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                class="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 transition-colors hover:bg-white/20"
+                            >
+                                <Instagram class="h-5 w-5" />
+                            </a>
+                        </div>
                     </div>
 
-                    <!-- Social Media Links -->
-                    <div class="flex items-center gap-5">
-                        <!-- Facebook -->
-                        <a href="https://www.facebook.com/profile.php?id=61585174361896" target="_blank" rel="noopener noreferrer"
-                           class="text-gray-400 transition-colors duration-200 hover:text-gray-900">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
-                        </a>
-
-                        <!-- Instagram -->
-                        <a href="https://www.instagram.com/itap_solution/" target="_blank" rel="noopener noreferrer"
-                           class="text-gray-400 transition-colors duration-200 hover:text-gray-900">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
-                            </svg>
-                        </a>
-
-                        <!-- TikTok -->
-                        <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer"
-                           class="text-gray-400 transition-colors duration-200 hover:text-gray-900">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
-                            </svg>
-                        </a>
-
-                        <!-- LinkedIn -->
-                        <a href="https://www.linkedin.com/company/itap-solution" target="_blank" rel="noopener noreferrer"
-                           class="text-gray-400 transition-colors duration-200 hover:text-gray-900">
-                            <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
-                                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
-                            </svg>
-                        </a>
+                    <div class="text-center lg:text-right">
+                        <h3 class="mb-4 text-lg font-bold">الخدمات</h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li><button type="button" class="transition-colors hover:text-white" @click="scrollToSection('services')">تطوير المواقع</button></li>
+                            <li><button type="button" class="transition-colors hover:text-white" @click="scrollToSection('services')">تطبيقات الموبايل</button></li>
+                            <li><button type="button" class="transition-colors hover:text-white" @click="scrollToSection('services')">أنظمة الشركات</button></li>
+                            <li><button type="button" class="transition-colors hover:text-white" @click="scrollToSection('services')">الذكاء الاصطناعي</button></li>
+                            <li><button type="button" class="transition-colors hover:text-white" @click="scrollToSection('services')">تحليل البيانات</button></li>
+                        </ul>
                     </div>
 
-                    <!-- Legal -->
-                    <div class="flex flex-wrap items-center justify-center gap-2 text-sm">
-                        <Link href="/privacy-policy"
-                              class="text-gray-500 transition-colors duration-200 hover:text-gray-900">
-                            {{ t('footerPrivacyPolicy') }}
-                        </Link>
+                    <div class="text-center lg:text-right">
+                        <h3 class="mb-4 text-lg font-bold">روابط سريعة</h3>
+                        <ul class="space-y-2 text-gray-300">
+                            <li><button type="button" class="transition-colors hover:text-white" @click="scrollToSection('hero')">الرئيسية</button></li>
+                            <li><button type="button" class="transition-colors hover:text-white" @click="scrollToSection('services')">الخدمات</button></li>
+                            <li><button type="button" class="transition-colors hover:text-white" @click="scrollToSection('industries')">القطاعات</button></li>
+                            <li><button type="button" class="transition-colors hover:text-white" @click="scrollToSection('portfolio')">الأعمال</button></li>
+                            <li><button type="button" class="transition-colors hover:text-white" @click="scrollToSection('contact')">تواصل معنا</button></li>
+                        </ul>
                     </div>
 
-                    <!-- Copyright -->
-                    <div class="text-sm text-gray-400">
-                        {{ t('footerCopyright') }}
+                    <div class="text-center lg:text-right">
+                        <h3 class="mb-4 text-lg font-bold">تواصل معنا</h3>
+                        <ul class="space-y-3 text-gray-300">
+                            <li class="flex items-start justify-center gap-2 lg:justify-start">
+                                <Phone class="mt-1 h-5 w-5 shrink-0" />
+                                <div>
+                                    <div dir="ltr">+966 53 581 5072</div>
+                                    <div dir="ltr">+20 100 123 4567</div>
+                                </div>
+                            </li>
+                            <li class="flex items-start justify-center gap-2 lg:justify-start">
+                                <Mail class="mt-1 h-5 w-5 shrink-0" />
+                                <div dir="ltr">info@itapsolution.com</div>
+                            </li>
+                            <li class="flex items-start justify-center gap-2 lg:justify-start">
+                                <MapPin class="mt-1 h-5 w-5 shrink-0" />
+                                <div>
+                                    <div>الرياض، السعودية</div>
+                                    <div>القاهرة، مصر</div>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="border-t border-white/10 pt-8">
+                    <div class="flex flex-col items-center justify-between gap-4 text-sm text-gray-300 md:flex-row">
+                        <div>
+                            © {{ currentYear }} تِك سوليوشنز. جميع الحقوق محفوظة.
+                        </div>
+
+                        <div class="flex flex-wrap items-center justify-center gap-6">
+                            <Link href="/privacy-policy" class="transition-colors hover:text-white">سياسة الخصوصية</Link>
+                            <Link href="/user-data-deletion" class="transition-colors hover:text-white">حذف البيانات</Link>
+                            <Link href="/contact-us" class="transition-colors hover:text-white">تواصل معنا</Link>
+                        </div>
                     </div>
                 </div>
             </div>
